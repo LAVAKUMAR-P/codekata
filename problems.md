@@ -42,7 +42,38 @@ if(angle[0]+angle[1]+angle[2] ===180 && angle[0]!==0 && angle[1]!==0 && angle[2]
     console.log("no");
 }
 });
- 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Given k sorted arrays of possibly different sizes, merge them and print the sorted output.
+Input Size : N<=100
+Example:
+INPUT
+k = 3
+1 3
+2 4 6
+0 9 10 11
+OUTPUT
+0 1 2 3 4 6 9 10 11
+
+const readline = require('readline');
+const inp = readline.createInterface({input: process.stdin});
+const userInput = [];
+inp.on("line", (data) => {userInput.push(data);
+    
+});
+inp.on("close", () => {
+    //start-here
+
+let merged=[]
+for(let i=0;i<3;i++){
+    numbers=userInput[i].split(" ").map((ele)=> parseInt(ele));
+   merged=[...merged,...numbers]
+}
+
+merged.sort(function(a, b){return a-b})
+console.log(merged.join(" "));
+
+
+});
  
  
  
